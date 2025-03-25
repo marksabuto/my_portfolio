@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
+        /* ===== Base Styles ===== */
         :root {
             --primary: #2563eb;
             --primary-dark: #1e40af;
@@ -48,6 +49,7 @@
             font-size: 1.6rem;
         }
 
+        /* ===== Typography ===== */
         h1, h2, h3, h4 {
             font-family: var(--font-heading);
             line-height: 1.2;
@@ -75,6 +77,7 @@
             height: auto;
         }
 
+        /* ===== Utility Classes ===== */
         .container {
             width: 100%;
             max-width: 1200px;
@@ -161,7 +164,7 @@
             color: transparent;
         }
 
-        /* Header Styles */
+        /* ===== Header Styles ===== */
         .header {
             position: fixed;
             top: 0;
@@ -237,7 +240,7 @@
             transition: var(--transition);
         }
 
-        /* Hero Section */
+        /* ===== Hero Section ===== */
         .hero {
             padding: 15rem 0 10rem;
             background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
@@ -314,7 +317,7 @@
             color: var(--gray);
         }
 
-        /* About Section */
+        /* ===== About Section ===== */
         .about {
             background-color: #fff;
             position: relative;
@@ -415,7 +418,7 @@
             font-size: 1.8rem;
         }
 
-        /* Services Section */
+        /* ===== Services Section ===== */
         .services {
             background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
             position: relative;
@@ -497,7 +500,7 @@
             font-size: 1.6rem;
         }
 
-        /* Projects Section */
+        /* ===== Projects Section ===== */
         .projects {
             background-color: #fff;
             position: relative;
@@ -588,7 +591,46 @@
             color: white;
         }
 
-        /* Contact Section */
+        /* Portfolio Project Card Special Styling */
+        .project-card.portfolio-project {
+            position: relative;
+            border: 2px solid rgba(37, 99, 235, 0.2);
+        }
+
+        .project-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            padding: 0.5rem 1.2rem;
+            border-radius: 20px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            z-index: 2;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .project-card.portfolio-project .project-info h3 {
+            color: var(--primary);
+        }
+
+        .project-card.portfolio-project .project-links .btn {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+        }
+
+        .project-card.portfolio-project .project-links .btn.secondary {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+
+        .project-card.portfolio-project .project-links .btn.secondary:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        /* ===== Contact Section ===== */
         .contact {
             background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
             position: relative;
@@ -701,7 +743,7 @@
             transform: translateY(-5px);
         }
 
-        /* Footer */
+        /* ===== Footer ===== */
         .footer {
             background-color: var(--dark);
             color: white;
@@ -739,7 +781,7 @@
             transform: translateY(-5px);
         }
 
-        /* Animations */
+        /* ===== Animations ===== */
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
@@ -756,7 +798,7 @@
             }
         }
 
-        /* Responsive Design */
+        /* ===== Responsive Design ===== */
         @media screen and (max-width: 992px) {
             .hero .container,
             .about-content {
@@ -885,33 +927,142 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <h2 class="section-title">About <span class="text-gradient">Me</span></h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>I'm a passionate full-stack developer with 3+ years of experience creating modern, responsive websites and web applications.</p>
-                    <p>I specialize in creating seamless user experiences with clean, efficient code. My approach combines technical expertise with aesthetic sensibility to deliver products that are both beautiful and functional.</p>
-                    <div class="skills">
-                        <h3>Technical Skills</h3>
-                        <ul>
-                            <li>HTML5, CSS3 & JavaScript (ES6+)</li>
-                            <li>React.js & Next.js</li>
-                            <li>Node.js & Express</li>
-                            <li>MongoDB & Firebase</li>
-                            <li>Responsive Web Design</li>
-                            <li>UI/UX Design Principles</li>
-                            <li>Git & Version Control</li>
-                            <li>SEO Optimization</li>
+<section id="about" class="about">
+    <div class="container">
+        <h2 class="section-title">About <span class="text-gradient">Me</span></h2>
+        <div class="about-content">
+            <div class="about-text">
+                <p class="intro-text">I thrive on challenges that push me to grow, delivering solutions that are as elegant as they are functional.</p>
+                
+                <p class="project-highlight">My portfolio demonstrates my ability to craft engaging digital experiences, achieving 95+ Lighthouse scores for performance and accessibility.</p>
+                
+                <!-- Interactive Skills Visualization -->
+                <div class="skills-showcase">
+                    <h3 class="skills-heading">Technical Skills</h3>
+                    <div class="skills-cloud">
+                        <ul class="interactive-list">
+                            <li data-tech="HTML5, CSS3 & JavaScript (ES6+)">HTML5, CSS3 & JavaScript (ES6+)</li>
+                            <li data-tech="React.js & Next.js">React.js & Next.js</li>
+                            <li data-tech="Node.js & Express">Node.js & Express</li>
+                            <li data-tech="MongoDB & Firebase">MongoDB & Firebase</li>
+                            <li data-tech="Responsive Web Design">Responsive Web Design</li>
+                            <li data-tech="UI/UX Design Principles">UI/UX Design Principles</li>
+                            <li data-tech="Git & Version Control">Git & Version Control</li>
+                            <li data-tech="SEO Optimization">SEO Optimization</li>
                         </ul>
+                        
+                        <style>
+                            .interactive-list {
+                                list-style: none;
+                                padding: 0;
+                                max-width: 500px;
+                                margin: 0 auto;
+                            }
+                            
+                            .interactive-list li {
+                                padding: 12px 20px;
+                                margin: 8px 0;
+                                background-color: #f5f5f5;
+                                border-radius: 8px;
+                                cursor: pointer;
+                                transition: all 0.3s ease;
+                                position: relative;
+                                overflow: hidden;
+                                box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+                            }
+                            
+                            .interactive-list li:hover {
+                                background-color: #e0e0e0;
+                                transform: translateX(5px);
+                                box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+                            }
+                            
+                            .interactive-list li:active {
+                                transform: scale(0.98);
+                            }
+                            
+                            .interactive-list li::after {
+                                content: attr(data-tech);
+                                position: absolute;
+                                left: 0;
+                                top: 0;
+                                width: 100%;
+                                height: 100%;
+                                background-color: #6200ea;
+                                color: white;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                transform: translateY(100%);
+                                transition: transform 0.3s ease;
+                                border-radius: 8px;
+                            }
+                            
+                            .interactive-list li:hover::after {
+                                transform: translateY(0);
+                            }
+                        </style>
+                        
+                        <script>
+                            document.querySelectorAll('.interactive-list li').forEach(item => {
+                                item.addEventListener('click', function() {
+                                    alert(`You selected: ${this.getAttribute('data-tech')}`);
+                                    // Or you could replace this with any other interactive behavior
+                                    // For example: this.classList.toggle('active');
+                                });
+                            });
+                        </script>
                     </div>
                 </div>
-                <div class="about-image">
-                    <img src="Images/marks.jpg" alt="Marks Abuto">
+                
+                <!-- Core Strengths Cards -->
+                <div class="strengths-section">
+                    <h3>Core Strengths</h3>
+                    <div class="strengths-grid">
+                        <div class="strength-card">
+                            <div class="strength-icon">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <h4>Technical Proficiency</h4>
+                            <p>Building robust, scalable web applications with modern technologies</p>
+                        </div>
+                        
+                        <div class="strength-card">
+                            <div class="strength-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <h4>Collaborative Development</h4>
+                            <p>Experience working in team environments with version control</p>
+                        </div>
+                        
+                        <div class="strength-card">
+                            <div class="strength-icon">
+                                <i class="fas fa-paint-brush"></i>
+                            </div>
+                            <h4>User-Centric Design</h4>
+                            <p>Creating interfaces focused on intuitive user experiences</p>
+                        </div>
+                        
+                        <div class="strength-card">
+                            <div class="strength-icon">
+                                <i class="fas fa-rocket"></i>
+                            </div>
+                            <h4>Continuous Improvement</h4>
+                            <p>Committed to staying current with evolving web technologies</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="about-image">
+                <div class="image-container">
+                    <img src="Images/marks.jpg" alt="Marks Abuto" class="profile-image">
+                    <div class="image-highlight"></div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- Services Section -->
     <section id="services" class="services">
@@ -968,15 +1119,20 @@
         <div class="container">
             <h2 class="section-title">Featured <span class="text-gradient">Projects</span></h2>
             <div class="projects-grid">
-                <!-- Project 1 -->
-                <div class="project-card">
-                    <img src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="E-commerce Website">
+                <!-- Portfolio Website Project -->
+                <div class="project-card portfolio-project">
+                    <div class="project-badge">Featured</div>
+                    <img src="Images/portfolio-preview.jpg" alt="Portfolio Website">
                     <div class="project-info">
-                        <h3>E-commerce Platform</h3>
-                        <p>A complete online store with product catalog, shopping cart, and secure checkout system built with React and Node.js.</p>
+                        <h3>Portfolio Website</h3>
+                        <p>A responsive, modern portfolio built with HTML5, CSS3, and JavaScript to showcase my work and skills as a web developer.</p>
                         <div class="project-links">
-                            <a href="#" class="btn">Live Demo</a>
-                            <a href="#" class="btn secondary">View Code</a>
+                            <a href="https://marksabuto.netlify.app/" class="btn" target="_blank">
+                                <i class="fas fa-external-link-alt"></i> Live Demo
+                            </a>
+                            <a href="https://github.com/marksabuto/my_portfolio/" class="btn secondary" target="_blank">
+                                <i class="fab fa-github"></i> Source Code
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -1032,8 +1188,9 @@
                     <p><i class="fas fa-envelope"></i> marksabuto@gmail.com</p>
                     <p><i class="fas fa-phone"></i> +254 715 341 602</p>
                     <p><i class="fas fa-map-marker-alt"></i> Nairobi, Kenya</p>
-                    
-                    <h2>Let's connect</h2>
+                    <br> <br>
+                    <br> <br>
+                    <h4>Let's connect</h4>
                     <div class="social-links">
                         <a href="https://github.com/marksabuto" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github"></i></a>
                         <a href="https://www.linkedin.com/in/marks-abuto/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
@@ -1054,7 +1211,7 @@
     </footer>
 
     <script>
-        // Mobile Navigation Toggle
+        // ===== Mobile Navigation Toggle =====
         const burger = document.querySelector('.burger');
         const navLinks = document.querySelector('.nav-links');
         const navItems = document.querySelectorAll('.nav-links li');
@@ -1062,31 +1219,69 @@
         burger.addEventListener('click', () => {
             navLinks.classList.toggle('active');
             burger.classList.toggle('active');
+            document.body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : 'auto';
         });
         
         navItems.forEach(item => {
             item.addEventListener('click', () => {
                 navLinks.classList.remove('active');
                 burger.classList.remove('active');
+                document.body.style.overflow = 'auto';
             });
         });
         
-        // Header Scroll Effect
+        // ===== Header Scroll Effect =====
         window.addEventListener('scroll', () => {
             const header = document.getElementById('header');
             header.classList.toggle('scrolled', window.scrollY > 50);
         });
         
-        // Smooth Scrolling for Anchor Links
+        // ===== Smooth Scrolling for Anchor Links =====
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
+                if(this.hash !== "") {
+                    e.preventDefault();
+                    
+                    const target = document.querySelector(this.hash);
+                    if(target) {
+                        window.scrollTo({
+                            top: target.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                        
+                        // Close mobile menu if open
+                        if(navLinks.classList.contains('active')) {
+                            navLinks.classList.remove('active');
+                            burger.classList.remove('active');
+                            document.body.style.overflow = 'auto';
+                        }
+                    }
+                }
             });
         });
+
+        // ===== Back to Top Button Visibility =====
+        const backToTop = document.querySelector('.back-to-top');
+        window.addEventListener('scroll', () => {
+            if(window.scrollY > 300) {
+                backToTop.style.opacity = '1';
+                backToTop.style.visibility = 'visible';
+            } else {
+                backToTop.style.opacity = '0';
+                backToTop.style.visibility = 'hidden';
+            }
+        });
+
+        // ===== Form Submission Handling =====
+        const contactForm = document.querySelector('.contact-form');
+        if(contactForm) {
+            contactForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                // Here you would typically add form validation and submission logic
+                alert('Thank you for your message! I will get back to you soon.');
+                contactForm.reset();
+            });
+        }
     </script>
 </body>
 </html>

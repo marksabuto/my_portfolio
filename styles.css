@@ -478,3 +478,191 @@ footer {
     color: #64748b;
     line-height: 1.6;
 }
+
+/* About Section Styles */
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.intro-text {
+    font-size: 1.8rem;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+    color: var(--dark);
+}
+
+.project-highlight {
+    font-size: 1.7rem;
+    line-height: 1.7;
+    margin-bottom: 3rem;
+    color: var(--gray);
+}
+
+.highlight {
+    color: var(--primary);
+    font-weight: 600;
+    position: relative;
+}
+
+.highlight::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+}
+
+/* Skills Cloud */
+.skills-showcase {
+    margin: 4rem 0;
+}
+
+.skills-heading {
+    margin-bottom: 2rem;
+    font-size: 2.2rem;
+    color: var(--primary);
+}
+
+.skills-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 3rem;
+}
+
+.skill-tag {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background-color: rgba(37, 99, 235, 0.1);
+    border-radius: 50px;
+    font-size: 1.4rem;
+    transition: all 0.3s ease;
+    cursor: default;
+    position: relative;
+    overflow: hidden;
+}
+
+.skill-tag::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    opacity: 0;
+    z-index: -1;
+    transition: opacity 0.3s ease;
+}
+
+.skill-tag:hover {
+    transform: translateY(-3px);
+    color: white;
+}
+
+.skill-tag:hover::before {
+    opacity: 1;
+}
+
+/* Strengths Cards */
+.strengths-section {
+    margin-top: 4rem;
+}
+
+.strengths-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.strength-card {
+    background: white;
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    transition: var(--transition);
+    text-align: center;
+}
+
+.strength-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.strength-icon {
+    font-size: 2.5rem;
+    color: var(--primary);
+    margin-bottom: 1.5rem;
+}
+
+.strength-card h4 {
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+}
+
+.strength-card p {
+    color: var(--gray);
+    font-size: 1.4rem;
+    line-height: 1.6;
+}
+
+/* Profile Image */
+.image-container {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.profile-image {
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    position: relative;
+    z-index: 2;
+    transition: transform 0.5s ease;
+}
+
+.image-highlight {
+    position: absolute;
+    top: -15px;
+    left: -15px;
+    width: 100%;
+    height: 100%;
+    border: 3px solid var(--primary);
+    border-radius: var(--border-radius);
+    z-index: 1;
+    transition: var(--transition);
+}
+
+.image-container:hover .profile-image {
+    transform: scale(1.03);
+}
+
+.image-container:hover .image-highlight {
+    top: -10px;
+    left: -10px;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .about-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .about-image {
+        order: -1;
+        margin-bottom: 4rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .strengths-grid {
+        grid-template-columns: 1fr;
+    }
+}

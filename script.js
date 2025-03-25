@@ -156,3 +156,61 @@ const animateOnScroll = () => {
 window.addEventListener('scroll', animateOnScroll);
 // Initialize on page load
 animateOnScroll();
+
+// Modal functionality
+const modal = document.querySelector('.project-modal');
+const modalTriggers = document.querySelectorAll('[href="#ecommerce-details"]');
+const closeModal = document.querySelector('.close-modal');
+
+// Open modal
+modalTriggers.forEach(trigger => {
+    trigger.addEventListener('click', (e) => {
+        e.preventDefault();
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+    });
+});
+
+// Close modal
+closeModal.addEventListener('click', () => {
+    modal.style.display = 'none';
+    document.body.style.overflow = 'auto';
+});
+
+// Close when clicking outside modal
+modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+});
+
+// Close with ESC key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modal.style.display === 'flex') {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+});
+
+// Skill tags animation
+document.querySelectorAll('.skill-tag').forEach(tag => {
+    const level = tag.getAttribute('data-level');
+    tag.style.setProperty('--size', `${level}%`);
+    
+    tag.addEventListener('mouseenter', () => {
+        tag.style.transform = `scale(1.1) translateY(-3px)`;
+        tag.style.boxShadow = '0 5px 15px rgba(0,0,0,0.1)';
+    });
+    
+    tag.addEventListener('mouseleave', () => {
+        tag.style.transform = '';
+        tag.style.boxShadow = '';
+    });
+});
+
+// Strength cards animation
+const strengthCards = document.querySelectorAll('.strength-card');
+strengthCards.forEach((card, index) => {
+    card.style.transitionDelay = `${index * 100}ms`;
+});
